@@ -20,8 +20,7 @@ oscillator.connect( masterGain );
 
 
 function setup() {
-
-
+  createCanvas(window.innerWidth, window.innerHeight)
 }
 
 
