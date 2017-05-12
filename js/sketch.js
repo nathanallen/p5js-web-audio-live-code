@@ -15,6 +15,21 @@ masterGain.connect( audioContext.destination );
 masterGain.gain.value = 0;
 oscillator.connect( masterGain );
 
+//setup LFO
+const lfoOctaveRange = 4;
+const maxLFOValue = 100 * 12 * lfoOctaveRange; // 100 per piano key
+const maxLFORate = 8;
+
+const lfo = audioContext.createOscillator();
+lfo.frequency.value = maxLFORate;
+
+const lfoGain = audioContext.createGain();
+lfoGain.gain.value = maxLFOValue;
+lfo.start();
+
+lfo.connect( lfoGain );
+lfoGain.connect( oscillator.detune );
+
 
 function setup() {
 
