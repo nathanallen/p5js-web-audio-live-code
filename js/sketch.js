@@ -17,6 +17,19 @@ oscillator.connect( masterGain );
 
 
 function setup() {
+
+  //setup wafeform selection
+  const oscWaveformElement = document.querySelector("#osc-waveform");
+
+  oscWaveformElement.addEventListener("change", function(event) {
+      event.preventDefault();
+
+      oscillator.type = event.target.value;
+
+  });
+
+
+  //create canvas
   createCanvas(window.innerWidth, window.innerHeight)
 }
 
