@@ -57,12 +57,25 @@ function draw() {
 
   if (mouseIsPressed) {
 
+    noStroke();
+    fill(255, 255, 255, 127); // fill canvas with 50% transparency (127 = 255/2)
+    rect(0, 0, window.innerWidth, window.innerHeight);
+    fill(0)
+
+    lfo.frequency.value = ( mouseY / window.innerHeight ) * maxLFORate;
+    lfoGain.gain.value  = ( mouseX / window.innerWidth  ) * maxLFOValue;
+
     masterGain.gain.value = 1;
 
+
   } else {
+
+    clear()
 
     masterGain.gain.value = 0;
 
   }
+
+  ellipse(mouseX, mouseY, 80, 80)
 
 }
