@@ -4,7 +4,7 @@ const audioContext = new AudioContext();
 
 //setup oscillator
 const oscillator = audioContext.createOscillator();
-oscillator.frequency = 440;
+oscillator.frequency.value = 440;
 oscillator.type = "sawtooth";
 // oscillator.connect( audioContext.destination );
 oscillator.start();
@@ -12,7 +12,7 @@ oscillator.start();
 //setup master gain (volume)
 const masterGain = audioContext.createGain();
 masterGain.connect( audioContext.destination );
-masterGain.gain.value = .01;
+masterGain.gain.value = 0;
 oscillator.connect( masterGain );
 
 
