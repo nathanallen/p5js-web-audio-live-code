@@ -36,4 +36,14 @@ function setup() {
 
 function draw() {
 
+  if (mouseIsPressed) {
+
+    masterGain.gain.value = 1;
+
+  } else {
+
+    masterGain.gain.value = 0;
+
+  }
+
 }
