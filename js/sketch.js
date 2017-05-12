@@ -35,12 +35,16 @@ function setup() {
 
   //setup wafeform selection
   const oscWaveformElement = document.querySelector("#osc-waveform");
+  const lfoWaveformElement = document.querySelector("#lfo-waveform");
 
   oscWaveformElement.addEventListener("change", function(event) {
       event.preventDefault();
-
       oscillator.type = event.target.value;
+  });
 
+  lfoWaveformElement.addEventListener("change", function(event) {
+      event.preventDefault();
+      lfo.type = event.target.value;
   });
 
 
